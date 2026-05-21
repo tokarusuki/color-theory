@@ -8,6 +8,13 @@
   <link rel="icon" href="4193130.png" type="image/png">
 </head>
 <body>
+  <svg xmlns="http://www.w3.org/2000/svg" class="svg-filters" aria-hidden="true" focusable="false">
+    <filter id="liquid-glass">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="14" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </svg>
+
   <div class="bg-orbs" aria-hidden="true">
     <span class="orb orb-1"></span>
     <span class="orb orb-2"></span>
@@ -15,7 +22,7 @@
   </div>
 
   <main class="app" id="app">
-    <header class="header card">
+    <header class="header card liquid-glass">
       <h1>Quiz Progressivo — Teoria das Cores 🎨</h1>
       <p>Teste seus conhecimentos e avance pelos níveis!</p>
       <div class="progress-wrap">
@@ -29,14 +36,14 @@
       </div>
     </header>
 
-    <section class="card quiz-card" id="quizCard">
+    <section class="card quiz-card liquid-glass" id="quizCard">
       <h2 id="questionText"></h2>
       <div id="answers" class="answers"></div>
       <p id="feedback" class="feedback" aria-live="polite"></p>
       <button id="nextBtn" class="btn" disabled>Próxima</button>
     </section>
 
-    <section class="card result hidden" id="resultCard">
+    <section class="card result hidden liquid-glass" id="resultCard">
       <h2>Resultado Final 🏁</h2>
       <p id="scoreText"></p>
       <p id="resultMessage"></p>

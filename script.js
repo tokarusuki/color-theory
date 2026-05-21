@@ -48,12 +48,19 @@ let current = 0;
 let score = 0;
 let locked = false;
 
+function updateProgressBar() {
+  const progress = (current + 1) / quizData.length;
+  const hue = Math.round(120 - (120 * progress));
+  progressFill.style.width = `${progress * 100}%`;
+  progressFill.style.background = `linear-gradient(90deg, hsl(${hue} 78% 48%), hsl(${hue} 85% 58%))`;
+}
+
 function renderQuestion() {
   const q = quizData[current];
   questionText.textContent = q.question;
   levelLabel.textContent = q.level;
   questionCounter.textContent = `Pergunta ${current + 1}/${quizData.length}`;
-  progressFill.style.width = `${((current + 1) / quizData.length) * 100}%`;
+  updateProgressBar();
   feedback.textContent = "";
   nextBtn.disabled = true;
   answers.innerHTML = "";
