@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Progressivo — Teoria das Cores</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-orbs" aria-hidden="true">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+  </div>
+
+  <main class="app" id="app">
+    <header class="header card">
+      <h1>Quiz Progressivo — Teoria das Cores 🎨</h1>
+      <p>Teste seus conhecimentos e avance pelos níveis!</p>
+      <div class="progress-wrap">
+        <div class="progress-meta">
+          <span id="levelLabel">Nível 1 — Muito Fácil 😄</span>
+          <span id="questionCounter">Pergunta 1/20</span>
+        </div>
+        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="20" aria-valuenow="1">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+    </header>
+
+    <section class="card quiz-card" id="quizCard">
+      <h2 id="questionText"></h2>
+      <div id="answers" class="answers"></div>
+      <p id="feedback" class="feedback" aria-live="polite"></p>
+      <button id="nextBtn" class="btn" disabled>Próxima</button>
+    </section>
+
+    <section class="card result hidden" id="resultCard">
+      <h2>Resultado Final 🏁</h2>
+      <p id="scoreText"></p>
+      <p id="resultMessage"></p>
+      <button id="restartBtn" class="btn">Jogar novamente</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
